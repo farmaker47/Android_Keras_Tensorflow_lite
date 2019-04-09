@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private Snackbar progressBar;
     private Classifier classifier;
 
+    //test
     //Camera field
     private static final int CAMERA_REQUEST = 1888;
     private static final int PERMISSIONS_REQUEST = 1;
