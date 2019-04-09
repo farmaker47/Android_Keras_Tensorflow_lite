@@ -114,7 +114,15 @@ public class MainActivity extends AppCompatActivity {
     //Start activity for result
     private void takePicture() {
         Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(cameraIntent, CAMERA_REQUEST);
+        if (cameraIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(cameraIntent, CAMERA_REQUEST);
+        }else{
+            Toast.makeText(
+                    this,
+                    "You don't have camera!",
+                    Toast.LENGTH_SHORT)
+                    .show();
+        }
     }
 
     @Override
